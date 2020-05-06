@@ -9,11 +9,11 @@ module JustGiving
     def initialize(token, environment=nil)
       if environment.nil? || environment == :production
         environment = :production
-        @base_url = "https://api.justgiving.com/#{@token}/v1/"
+        @base_url = "https://api.justgiving.com/#{token}/v1/"
       elsif environment == :staging
-        @base_url = "https://api-staging.justgiving.com/#{@token}/v1/"
+        @base_url = "https://api-staging.justgiving.com/#{token}/v1/"
       elsif environment == :sandbox
-        @base_url = "https://api-sandbox.justgiving.com/#{@token}/v1/"
+        @base_url = "https://api-sandbox.justgiving.com/#{token}/v1/"
       else
         raise Error::InvalidEnvironment
       end
